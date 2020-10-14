@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import Features from "./components/Features/Features";
+
+import Main from "./components/Main/Main";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import FetchData from "./service/FetchData";
+import './style.css'
+
+
+
+class App extends Component {
+  fetchData = new FetchData();
+
+  state = {
+    rocket: 'Falcon1',
+    rocketFeatures: null
+  };
+
+  componentDidMount() {
+
+  }
+
+  updateRocket() {
+    console.log(this.state)
+    this.fetchData.getRocket()
+      .then(data => data.find(item => item.name === this.state.rocket))
+      .then(rocketFeatures => this.setState({rocketFeatures}));
+    console.log(this.state)
+  }
+
+  render() {
+    return(
+      <React.Fragment>
+        <Header/>
+        <Main rocket={this.state.rocket}/>
+        <Features/>
+        <Footer/>
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
