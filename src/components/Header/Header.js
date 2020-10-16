@@ -1,40 +1,49 @@
 import React from "react";
-
+import {Link, NavLink} from "react-router-dom";
 import './Header.css'
 import logo from "../../logo.svg";
 
 
-const Header = () => {
+const Header = (props) => {
+  const rocket = props.rockets.map(el => (
+    <li key={el} className="item">
+      <Link
+        to="/rocket"
+        className="item-link"
+        onClick={() => {
+          props.changeRocket(el)
+        }}>{el}</Link>
+    </li>
+  ));
+
   return (
     <header className="header">
-      <img
-        src={logo}
-        alt="Logo Space X"
-        className="logo"
-      />
+      <Link to='/'>
+        <img
+          src={logo}
+          alt="Logo Space X"
+          className="logo"
+        />
+      </Link>
       <nav className="main-nav nav">
         <ul className="list">
-          <li className="item">
-            <a href="/" className="item-link">Falcon 1</a>
-          </li>
-          <li className="item">
-            <a href="/" className="item-link">Falcon 9</a>
-          </li>
-          <li className="item">
-            <a href="/" className="item-link">Falcon Heavy</a>
-          </li>
-          <li className="item">
-            <a href="/" className="item-link">Updates</a>
-          </li>
+          {rocket}
         </ul>
       </nav>
       <nav className="secondary-nav">
         <ul className="list">
           <li className="item">
-            <a href="/" className="item-link">Home</a>
+            <NavLink
+              activeClassName='active'
+              exact to="/"
+              className="item-link"
+              >Home</NavLink>
           </li>
           <li className="item">
-            <a href="calendar.html" className="item-link">Calendar</a>
+            <NavLink
+              activeClassName='active'
+              to="/calendar"
+              className="item-link">Calendar</NavLink>
           </li>
         </ul>
       </nav>
