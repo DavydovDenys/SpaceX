@@ -64,7 +64,7 @@ class App extends Component {
 
         <Route
           path='/rocket'
-          component={this.state.rocketFeatures
+          render={() => this.state.rocketFeatures
             &&
           <Features rocketFeatures={this.state.rocketFeatures}/>}/>
 
