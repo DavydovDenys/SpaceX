@@ -2,7 +2,7 @@ import React from 'react';
 import RellaxWrapper from "react-rellax-wrapper";
 import Main from "../Main/Main";
 import './Features.css';
-import Main from '../Main/Main'
+
 
 const img = {
   'Falcon 1': 'falcon-1',
