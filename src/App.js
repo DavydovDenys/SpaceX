@@ -66,7 +66,7 @@ class App extends Component {
           path='/rocket'
           component={this.state.rocketFeatures
             &&
-          <Features rocketFeatures={this.state.rocketFeatures}/>}>
+          <Features rocketFeatures={this.state.rocketFeatures}/>}/>
 
 
 
