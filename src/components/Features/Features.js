@@ -2,7 +2,7 @@ import React from 'react';
 import RellaxWrapper from "react-rellax-wrapper";
 import Main from "../Main/Main";
 import './Features.css';
-
+import Main from '../Main/Main'
 
 const img = {
   'Falcon 1': 'falcon-1',
@@ -58,15 +58,15 @@ const Features = (props) => {
               <td className="table-column">MASS</td>
               <td className="table-column">{mass.kg} kg / {mass.lb} lb</td>
             </tr>
-            {payLoad}
+
+              {payLoad}
             </thead>
           </table>
           <RellaxWrapper speed={14}>
-            <img
-              src={`img/${img[name] ? img[name] : img.other}.png`}
-              alt="rocket"
-              className="rocket"
-            />
+          <img
+            src={`img/${img[name] ? img[name] : img.other}.png`}
+            alt="rocket"
+            className="rocket"
           </RellaxWrapper>
           <article>
             <h3 className="features-subtitle">DESCRIPTION</h3>
