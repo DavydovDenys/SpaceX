@@ -63,10 +63,10 @@ const Features = (props) => {
             </thead>
           </table>
           <RellaxWrapper speed={14}>
-          <img
-            src={`img/${img[name] ? img[name] : img.other}.png`}
-            alt="rocket"
-            className="rocket"
+            <img
+              src={`img/${img[name] ? img[name] : img.other}.png`}
+              alt="rocket"
+              className="rocket"/>
           </RellaxWrapper>
           <article>
             <h3 className="features-subtitle">DESCRIPTION</h3>
@@ -78,6 +78,7 @@ const Features = (props) => {
       </section>
     </>
   );
+    
 };
 
 export default Features;
