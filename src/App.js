@@ -63,10 +63,10 @@ class App extends Component {
           render={() => this.state.company && <Home company={this.state.company}/>}/>
 
         <Route
-          path='/rocket'
-          render={() => this.state.rocketFeatures
+          path='/rocket/:rocket'
+          render={({match}) => this.state.rocketFeatures
             &&
-          <Features rocketFeatures={this.state.rocketFeatures}/>}/>
+          <Features match={match} rocketFeatures={this.state.rocketFeatures}/>}/>
 
 
 
