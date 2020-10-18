@@ -13,6 +13,7 @@ const video = {
 
 
 const Main = (props) => {
+  
   return (
     <section className="main">
       <h1 className="title">
@@ -23,10 +24,7 @@ const Main = (props) => {
         <video
           className="video"
           autoPlay loop muted
-          src={`./video/${video[props.rocket] ? 
-            video[props.rocket] : 
-            video.other
-          }.mp4`}/>
+          src={`/video/${video[props.rocket] ? video[props.rocket] : video.other}.mp4`}/>
 
       </div>}
     </section>
