@@ -13,7 +13,7 @@ const Details = (props) => {
   const {getLaunch} = UseLaunches();
   useEffect(() => {
     setLaunch(getLaunch(props.match.params.id));
-  });
+  }, [getLaunch, props.match.params.id]);
 
   console.log(launch)
 
