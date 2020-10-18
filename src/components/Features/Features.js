@@ -1,5 +1,6 @@
 import React from 'react';
 import RellaxWrapper from "react-rellax-wrapper";
+import Main from "../Main/Main";
 import './Features.css';
 import Main from '../Main/Main'
 
@@ -19,10 +20,10 @@ const Features = (props) => {
     mass,
     description,
     payload_weights: payloadWeights
-    } = props.rocketFeatures
+  } = props.rocketFeatures
   console.log(props.rocketFeatures)
 
-  const payLoad = payloadWeights.map(el =>{
+  const payLoad = payloadWeights.map(el => {
     return (
       <tr key={el.id}>
         <td className="table-column">PAYLOAD TO {el.id.toUpperCase()}</td>
@@ -57,6 +58,7 @@ const Features = (props) => {
               <td className="table-column">MASS</td>
               <td className="table-column">{mass.kg} kg / {mass.lb} lb</td>
             </tr>
+
               {payLoad}
             </thead>
           </table>
@@ -65,7 +67,6 @@ const Features = (props) => {
             src={`img/${img[name] ? img[name] : img.other}.png`}
             alt="rocket"
             className="rocket"
-          />
           </RellaxWrapper>
           <article>
             <h3 className="features-subtitle">DESCRIPTION</h3>
